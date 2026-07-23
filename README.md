@@ -1,6 +1,6 @@
 # Ticketera - Core de Dominio Puro
 
-Ticketera es un sistema de venta de entradas para eventos. Este repositorio contiene el **Core de Dominio Puro**, completamente aislado de frameworks, bases de datos o interfaces externas, siguiendo los principios de Clean Architecture.
+Ticketera es un sistema de venta de entradas para eventos independientes. Este repositorio contiene el **Core de Dominio Puro**, completamente aislado de frameworks, bases de datos o interfaces externas, siguiendo los principios de Clean Architecture.
 
 ## Arquitectura
 
