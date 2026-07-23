@@ -14,6 +14,10 @@ public class OrderService {
             throw new IllegalArgumentException("Invalid event ID");
         }
         Event event = repository.findById(eventId);
-        notifier.send("admin@ticketera.com", "Order processed for event: " + eventId);
+        if (event == null) {
+            throw new IllegalArgumentException("Event not found");
+        }
+        notifier.send("admin@ticketera.com", 
+        "Order processed for: " + event.getName() + " (" + quantity + " tickets), with ID: " + eventId);
     }
 }

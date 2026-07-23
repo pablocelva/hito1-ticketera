@@ -41,7 +41,7 @@ hito1-ticketera/
 | `Event.java` | Entidad central que representa un evento. Contiene nombre, venue, capacidad y entradas vendidas. Define `hasAvailability()` y `getAvailableTickets()`. |
 | `TicketPool.java` | Gestiona el stock de entradas disponibles. Valida que la cantidad sea positiva y que haya stock suficiente antes de reservar. |
 | `OrderValidator.java` | Valida las reglas de negocio de una orden: cantidad mayor a cero y precio mayor a cero. |
-| `OrderService.java` | Servicio que procesa órdenes. Depende de `EventRepository` y `NotificationService` (inyectados por constructor). |
+| `OrderService.java` | Servicio que procesa órdenes. Valida el ID del evento, verifica que el evento exista en el repositorio y envía una notificación con el nombre del evento. Depende de `EventRepository` y `NotificationService` (inyectados por constructor). |
 | `BookingConfirmation.java` | Servicio que envía confirmaciones de reserva. Depende de `NotificationService` (inyectado por constructor). |
 
 **Interfaces:**
@@ -98,9 +98,9 @@ Este proyecto utiliza **JUnit 5** y **Mockito** para asegurar los más altos est
 | `Event` | 4 | `hasAvailability()` true + false |
 | `TicketPool` | 4 | `quantity ≤ 0`, `quantity > available`, éxito |
 | `OrderValidator` | 3 | `quantity ≤ 0`, `price ≤ 0`, éxito |
-| `OrderService` | 3 | `eventId null`, `eventId empty`, éxito |
+| `OrderService` | 4 | `eventId null`, `eventId empty`, `event not found`, éxito |
 | `BookingConfirmation` | 3 | `email null`, `email empty`, éxito |
-| **Total** | **17 tests** | **100% branch coverage** |
+| **Total** | **18 tests** | **100% branch coverage** |
 
 ## Cómo verificar
 
