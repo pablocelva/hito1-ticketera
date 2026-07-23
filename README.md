@@ -31,7 +31,7 @@ After running the command, view the coverage evidence: target/site/jacoco/index.
 |---|---|---|
 | `Event` | 4 | `hasAvailability()` true + false |
 | `TicketPool` | 4 | `quantity ≤ 0`, `quantity > available`, éxito |
-<!-- | `OrderValidator` | 3 | `quantity ≤ 0`, `price ≤ 0`, éxito | -->
+| `OrderValidator` | 3 | `quantity ≤ 0`, `price ≤ 0`, éxito |
 <!-- | `OrderService` | 3 | `eventId null`, `eventId empty`, éxito | -->
 <!-- | `BookingConfirmation` | 3 | `email null`, `email empty`, éxito | -->
 <!-- | **Total** | **17 tests** | **100% branch coverage** | -->
